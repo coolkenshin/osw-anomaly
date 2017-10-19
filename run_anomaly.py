@@ -31,7 +31,8 @@ import math
 import datetime
 import dateutil.parser
 import json
-import oswdata_ps
+import collections
+from oswdata_ps import OSWData, PS
 
 from nupic.frameworks.opf.modelfactory import ModelFactory
 from nupic.frameworks.opf.predictionmetricsmanager import MetricsManager
@@ -47,6 +48,15 @@ def runAnomaly(options):
   # Load the model params JSON
   with open("model_params.json") as fp:
     modelParams = json.load(fp)
+
+  if options.oswpsDir != "":
+    # Get PS dictionary
+    osw = OSWData(options.oswpsDir, PS)
+    osw.traverse_dir()
+    ps_dict_unsorted = osw.get_ps_dict()
+    options.max = ps_max_value = max(ps_dict_unsorted.values())
+    options.min = ps_min_value = min(ps_dict_unsorted.values())
+    print("Min value:" + str(ps_min_value) + ', ' + "Max value:" + str(ps_max_value))
 
   # Update the resolution value for the encoder
   sensorParams = modelParams['modelParams']['sensorParams']
@@ -108,20 +118,17 @@ def runAnomaly(options):
     csvWriter = csv.writer(open(options.outputFile, "wb"))
     csvWriter.writerow(["timestamp", "value",
                         "_raw_score", "likelihood_score", "log_likelihood_score"])
-    headers = ['dttm', 'value']
-    
-    # Get PS dictionary
-    osw = OSWData(options.oswpsDir, PS)
-    osw.traverse_dir()
-    ps_dict = osw.get_ps_dict()
+    ps_od = collections.OrderedDict(sorted(ps_dict_unsorted.items()))
+
     # The anomaly likelihood object
     anomalyLikelihood = AnomalyLikelihood()
 
     # Iterate through each record in the CSV file
     print "Starting processing at", datetime.datetime.now()
-    for i, timestamp in enumerate(ps_dict):
-      ps_count = ps_dict[timestamp]
+    for i, timestamp in enumerate(ps_od):
+      ps_count = ps_od[timestamp]
         
+      inputData = {}
       inputData["value"] = float(ps_count)
       inputData["dttm"] = dateutil.parser.parse(timestamp)
       #inputData["dttm"] = datetime.datetime.now()

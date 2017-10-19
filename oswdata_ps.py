@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import sys
@@ -8,7 +8,7 @@ import subprocess
 import calendar
 import datetime
 import time
-from certifi import __main__
+#from certifi import __main__
 
 __version__ = "1.0.0.170928"
 
