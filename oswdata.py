@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 __version__ = "1.0.0.170928"
@@ -137,7 +137,11 @@ class OSWData(object):
             
         lst = re.split('zzz', text, flags=re.DOTALL) # to list based on time
         lst = [x for x in lst if x] # remove empty strings
+        """
+        Python 2.x
         lst = map(lambda v: re.split('(\s\W{1,}\w{3}\s\w{3}\s\w{2,3}\s\d{2}:\d{2}:\d{2}\s\w{3}\s\d{4})', v), lst)
+        """
+        lst = [re.split('(\s\W{1,}\w{3}\s\w{3}\s\w{2,3}\s\d{2}:\d{2}:\d{2}\s\w{3}\s\d{4})', v) for v in lst]
         block_dict = []
         for v in lst:
             timestamp=v[1]
@@ -387,7 +391,7 @@ class OSWData(object):
         swap['pos']=swap['pos'].apply(lambda d: int(d)-4)
         #print swap
         data=pd.merge(data,swap,how='outer',on='pos')
-        print data
+        print(data)
         return data
 
  

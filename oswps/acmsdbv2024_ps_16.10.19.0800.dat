@@ -1,0 +1,467 @@
+Linux    OSW v2.1.1
+zzz ***Wed Oct 19 08:00:43 UTC 2016
+F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
+4 S root         1     0  0  80   0 -  2590 poll_s 07:48 ?        00:00:00 init [3]                                                                                                                                                           
+1 S root         2     0  0  80   0 -     0 kthrea 07:48 ?        00:00:00 [kthreadd]
+1 S root         3     2  0 -40   - -     0 migrat 07:48 ?        00:00:00 [migration/0]
+1 S root         4     2  0  80   0 -     0 ksofti 07:48 ?        00:00:00 [ksoftirqd/0]
+5 S root         5     2  0 -40   - -     0 watchd 07:48 ?        00:00:00 [watchdog/0]
+1 S root         6     2  0 -40   - -     0 migrat 07:48 ?        00:00:00 [migration/1]
+1 S root         7     2  0  80   0 -     0 ksofti 07:48 ?        00:00:00 [ksoftirqd/1]
+5 S root         8     2  0 -40   - -     0 watchd 07:48 ?        00:00:00 [watchdog/1]
+1 S root         9     2  0 -40   - -     0 migrat 07:48 ?        00:00:00 [migration/2]
+1 S root        10     2  0  80   0 -     0 ksofti 07:48 ?        00:00:00 [ksoftirqd/2]
+5 S root        11     2  0 -40   - -     0 watchd 07:48 ?        00:00:00 [watchdog/2]
+1 S root        12     2  0 -40   - -     0 migrat 07:48 ?        00:00:00 [migration/3]
+1 S root        13     2  0  80   0 -     0 ksofti 07:48 ?        00:00:00 [ksoftirqd/3]
+5 S root        14     2  0 -40   - -     0 watchd 07:48 ?        00:00:00 [watchdog/3]
+1 S root        15     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [events/0]
+1 S root        16     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [events/1]
+1 S root        17     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [events/2]
+1 S root        18     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [events/3]
+1 S root        19     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [cpuset]
+1 S root        20     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [khelper]
+1 S root        21     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [netns]
+1 S root        22     2  0  80   0 -     0 async_ 07:48 ?        00:00:00 [async/mgr]
+1 S root        23     2  0  80   0 -     0 xenwat 07:48 ?        00:00:00 [xenwatch]
+1 S root        24     2  0  80   0 -     0 xb_wai 07:48 ?        00:00:00 [xenbus]
+1 S root        25     2  0  80   0 -     0 bdi_sy 07:48 ?        00:00:00 [sync_supers]
+1 S root        26     2  0  80   0 -     0 bdi_fo 07:48 ?        00:00:00 [bdi-default]
+1 S root        27     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kintegrityd/0]
+1 S root        28     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kintegrityd/1]
+1 S root        29     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kintegrityd/2]
+1 S root        30     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kintegrityd/3]
+1 S root        31     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kblockd/0]
+1 S root        32     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kblockd/1]
+1 S root        33     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kblockd/2]
+1 S root        34     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kblockd/3]
+1 S root        35     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [ata/0]
+1 S root        36     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [ata/1]
+1 S root        37     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [ata/2]
+1 S root        38     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [ata/3]
+1 S root        39     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [ata_aux]
+1 S root        40     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [ksuspend_usbd]
+1 S root        41     2  0  80   0 -     0 hub_th 07:48 ?        00:00:00 [khubd]
+1 S root        42     2  0  80   0 -     0 serio_ 07:48 ?        00:00:00 [kseriod]
+1 S root        47     2  0  80   0 -     0 watchd 07:48 ?        00:00:00 [khungtaskd]
+1 S root        48     2  0  80   0 -     0 kswapd 07:48 ?        00:00:00 [kswapd0]
+1 S root        49     2  0  85   5 -     0 ksm_sc 07:48 ?        00:00:00 [ksmd]
+1 S root        50     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [aio/0]
+1 S root        51     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [aio/1]
+1 S root        52     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [aio/2]
+1 S root        53     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [aio/3]
+1 S root        54     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [crypto/0]
+1 S root        55     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [crypto/1]
+1 S root        56     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [crypto/2]
+1 S root        57     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [crypto/3]
+1 S root        63     2  0  80   0 -     0 khvcd  07:48 ?        00:00:00 [khvcd]
+1 S root        64     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kpsmoused]
+1 S root        65     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kstriped]
+1 S root        66     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [ksnapd]
+1 S root        67     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [usbhid_resumer]
+1 S root       130     2  0  80   0 -     0 bdi_wr 07:49 ?        00:00:00 [flush-202:0]
+1 S root       131     2  0  80   0 -     0 kjourn 07:49 ?        00:00:00 [kjournald]
+5 S root       176     1  0  76  -4 -  4748 poll_s 07:49 ?        00:00:00 /sbin/udevd -d
+1 S root      1098     2  0  80   0 -     0 bdi_wr 07:50 ?        00:00:00 [flush-202:48]
+1 S root      1113     2  0  80   0 -     0 kjourn 07:53 ?        00:00:00 [kjournald]
+1 S root      1114     2  0  80   0 -     0 kjourn 07:53 ?        00:00:00 [kjournald]
+1 S root      1115     2  0  80   0 -     0 kjourn 07:53 ?        00:00:00 [kjournald]
+1 S root      1116     2  0  80   0 -     0 kjourn 07:53 ?        00:00:00 [kjournald]
+1 S root      1117     2  0  80   0 -     0 kjourn 07:53 ?        00:00:00 [kjournald]
+1 D root      1118     2  0  80   0 -     0 sync_b 07:53 ?        00:00:00 [kjournald]
+1 S root      1119     2  0  80   0 -     0 kjourn 07:53 ?        00:00:00 [kjournald]
+0 S root      1190     1  0  80   0 - 17574 wait   07:53 ?        00:00:00 /bin/bash /etc/rc.d/rc 3
+5 S root      1586     1  0  76  -4 -  6322 epoll_ 07:54 ?        00:00:00 auditd
+4 S root      1588  1586  0  72  -8 -  3556 futex_ 07:54 ?        00:00:00 /sbin/audispd
+1 S root      1589     2  0  80   0 -     0 kaudit 07:54 ?        00:00:00 [kauditd]
+5 S root      1609     1  0  80   0 -  2530 poll_s 07:54 ?        00:00:00 syslogd -m 0
+5 S root      1612     1  0  80   0 -   954 syslog 07:54 ?        00:00:00 klogd -x
+1 S root      1639     1  0  80   0 -  2693 hrtime 07:54 ?        00:00:00 irqbalance
+5 S rpc       1649     1  0  80   0 -  2530 poll_s 07:54 ?        00:00:00 portmap
+1 S root      1677     2  0  80   0 -     0 worker 07:54 ?        00:00:00 [rpciod/0]
+1 S root      1678     2  0  80   0 -     0 worker 07:54 ?        00:00:00 [rpciod/1]
+5 S root      1679     2  0  80   0 -     0 worker 07:54 ?        00:00:00 [rpciod/2]
+1 S root      1680     2  0  80   0 -     0 worker 07:54 ?        00:00:00 [rpciod/3]
+5 S rpcuser   1685     1  0  80   0 -  2542 poll_s 07:54 ?        00:00:00 rpc.statd
+1 S root      1707     1  0  80   0 -  6736 epoll_ 07:54 ?        00:00:00 rpc.idmapd
+5 S dbus      1732     1  0  80   0 -  6891 poll_s 07:54 ?        00:00:00 dbus-daemon --system
+5 S root      1742     1  0  80   0 - 15688 poll_s 07:54 ?        00:00:00 /usr/sbin/sshd
+1 S root      1766     2  0  75  -5 -     0 slow_w 07:54 ?        00:00:00 [kslowd000]
+1 S root      1767     2  0  75  -5 -     0 slow_w 07:54 ?        00:00:00 [kslowd001]
+1 S root      1769     2  0  80   0 -     0 worker 07:54 ?        00:00:00 [nfsiod]
+1 S root      1772     2  0  80   0 -     0 svc_re 07:54 ?        00:00:00 [lockd]
+5 S 68        1805     1  0  80   0 -  8778 poll_s 07:54 ?        00:00:00 hald
+0 S root      1806  1805  0  80   0 -  5427 poll_s 07:54 ?        00:00:00 hald-runner
+5 S root      1843     1  0  80   0 - 33131 poll_s 07:55 ?        00:00:01 /usr/bin/ruby /usr/sbin/mcollectived --pid=/var/run/mcollectived.pid --config=/etc/mcollective/server.cfg
+5 S nscd      1883     1  0  80   0 - 32408 epoll_ 07:55 ?        00:00:00 /usr/sbin/nscd
+1 S root      1965     1  0  80   0 - 39803 epoll_ 07:55 ?        00:00:00 /usr/sbin/sssd -f -D
+1 S root      1976     1  0  80   0 -  6451 poll_s 07:55 ?        00:00:00 xinetd -stayalive -pidfile /var/run/xinetd.pid
+4 S root      1991  1965  0  80   0 - 45039 epoll_ 07:55 ?        00:00:00 /usr/libexec/sssd/sssd_be -d 0 --debug-to-files --domain oracle.com
+5 S ntp       1994     1  0  80   0 -  6374 poll_s 07:55 ?        00:00:00 ntpd -x -u ntp:ntp -p /var/run/ntpd.pid
+0 S root      2011  1965  0  80   0 - 39416 epoll_ 07:55 ?        00:00:00 /usr/libexec/sssd/sssd_nss -d 0 --debug-to-files
+0 S root      2012  1965  0  80   0 - 39237 epoll_ 07:55 ?        00:00:00 /usr/libexec/sssd/sssd_pam -d 0 --debug-to-files
+5 S root      2019     1  0  80   0 - 18349 poll_s 07:55 ?        00:00:00 sendmail: accepting connections
+1 S smmsp     2028     1  0  80   0 - 14995 pause  07:55 ?        00:00:00 sendmail: Queue runner@01:00:00 for /var/spool/clientmqueue
+5 S root      2036     1  0  80   0 - 19760 hrtime 07:55 ?        00:00:00 crond
+5 S xfs       2058     1  0  80   0 -  6678 poll_s 07:55 ?        00:00:00 xfs -droppriv -daemon
+1 S root      2083     1  0  80   0 - 23424 poll_s 07:56 ?        00:00:00 /etc/observiced -b
+0 S root      2109     1  0  80   0 - 16235 pause  07:56 ?        00:00:00 /usr/bin/ksh ./OSWatcher.sh 60 168 gzip
+4 S root      2310  1742  0  80   0 - 24638 unix_s 07:56 ?        00:00:00 sshd: ramanrav [priv]
+0 S root      2315  2109  0  80   0 - 16227 pause  07:56 ?        00:00:00 /usr/bin/ksh ./OSWatcherFM.sh 168
+5 S ramanrav  2434  2310  0  80   0 - 32964 poll_s 07:57 ?        00:00:00 sshd: ramanrav@pts/0
+0 S ramanrav  2449  2434  0  80   0 - 18097 wait   07:57 pts/0    00:00:00 -bash
+4 S root      2496  1742  0  80   0 - 24638 unix_s 07:57 ?        00:00:00 sshd: subamish [priv]
+4 S root      2502  2449  0  80   0 - 27660 poll_s 07:57 pts/0    00:00:00 sudo -u oracle -H sslogger
+4 S oracle    2503  2502  0  80   0 - 20270 n_tty_ 07:57 pts/0    00:00:00 sslogger
+1 S oracle    2505  2503  0  80   0 - 20270 n_tty_ 07:57 pts/0    00:00:00 sslogger
+0 S oracle    2506  2505  0  80   0 - 17575 n_tty_ 07:57 pts/1    00:00:00 -
+5 S subamish  2535  2496  0  80   0 - 32964 poll_s 07:57 ?        00:00:00 sshd: subamish@pts/2
+0 S subamish  2545  2535  0  80   0 - 18097 wait   07:57 pts/2    00:00:00 -bash
+4 S root      2568  2545  0  80   0 - 33348 poll_s 07:57 pts/2    00:00:00 sudo -u root -H sslogger
+4 S root      2627  2568  0  80   0 - 20270 n_tty_ 07:57 pts/2    00:00:00 sslogger
+1 S root      2628  2627  0  80   0 - 20270 n_tty_ 07:57 pts/2    00:00:00 sslogger
+4 S root      2629  2628  0  80   0 - 17575 n_tty_ 07:57 pts/3    00:00:00 -
+4 S root      2713  1742  0  80   0 - 24638 unix_s 07:58 ?        00:00:00 sshd: nrajavar [priv]
+0 S oracle    2741     1  0  80   0 - 22662 hrtime 07:58 ?        00:00:00 /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/perl/bin/perl /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/bin/emwd.pl agent /u01/app/oracle/product/emagent/agent12c/agent_inst/sysman/log/emagent.nohup
+0 S oracle    2839  2741  6  80   0 - 151386 futex_ 07:59 ?       00:00:05 /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/jdk/bin/java -Xmx128m -server -Djava.security.egd=file:///dev/./urandom -Dsun.lang.ClassLoader.allowArraySyntax=true -XX:+UseLinuxPosixThreadCPUClocks -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:+UseCompressedOops -Dwatchdog.pid=2741 -cp /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/jdbc/lib/ojdbc5.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/ucp/lib/ucp.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/modules/oracle.http_client_11.1.1.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/lib/xmlparserv2.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/lib/jsch.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/lib/optic.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/modules/oracle.dms_11.1.1/dms.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/modules/oracle.odl_11.1.1/ojdl.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/modules/oracle.odl_11.1.1/ojdl2.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/sysman/jlib/log4j-core.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/jlib/gcagent_core.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/sysman/jlib/emagentSDK-intg.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/sysman/jlib/emagentSDK.jar oracle.sysman.gcagent.tmmain.TMMain
+5 S nrajavar  2935  2713  0  80   0 - 32964 poll_s 07:59 ?        00:00:00 sshd: nrajavar@pts/4
+0 S nrajavar  2940  2935  0  80   0 - 18097 n_tty_ 07:59 pts/4    00:00:00 -bash
+0 S root      3330  1190  0  80   0 - 17574 wait   08:00 ?        00:00:00 /bin/bash /etc/rc3.d/S98puppet start
+0 S root      3335  3330  0  80   0 - 17540 wait   08:00 ?        00:00:00 /bin/bash -c ulimit -S -c 0 >/dev/null 2>&1 ; /usr/bin/puppet agent
+0 D root      3336  3335 13  80   0 - 29529 sync_p 08:00 ?        00:00:00 /usr/bin/ruby /usr/bin/puppet agent
+0 S root      3343  2109  0  80   0 - 16235 wait   08:00 ?        00:00:00 /usr/bin/ksh ./oswsub.sh /var/log/ops/os-watcher/archive/oswvmstat/acmsdbv2024_vmstat_16.10.19.0800.dat vmstat 1 3
+0 S root      3345  2109  0  80   0 - 16235 wait   08:00 ?        00:00:00 /usr/bin/ksh ./oswsub.sh /var/log/ops/os-watcher/archive/oswmpstat/acmsdbv2024_mpstat_16.10.19.0800.dat mpstat 1 3
+0 S root      3349  2109  0  80   0 - 16235 wait   08:00 ?        00:00:00 /usr/bin/ksh ./oswlnxio.sh /var/log/ops/os-watcher/archive/oswiostat/acmsdbv2024_iostat_16.10.19.0800.dat
+0 S root      3353  2109  0  80   0 - 16235 wait   08:00 ?        00:00:00 /usr/bin/ksh ./oswlnxtop.sh /var/log/ops/os-watcher/archive/oswtop/acmsdbv2024_top_16.10.19.0800.dat
+0 S root      3356  2109  0  80   0 - 16235 wait   08:00 ?        00:00:00 /usr/bin/ksh ./oswsub.sh /var/log/ops/os-watcher/archive/oswps/acmsdbv2024_ps_16.10.19.0800.dat ps -elf
+0 R root      3362  2109  0  80   0 -  1009 -      08:00 ?        00:00:00 gzip /var/log/ops/os-watcher/archive/oswslabinfo/acmsdbv2024_slabinfo_16.10.19.0700.dat
+0 S root      3363  3345  0  80   0 - 14737 pause  08:00 ?        00:00:00 mpstat 1 3
+0 S root      3365  3343  0  80   0 -  1465 hrtime 08:00 ?        00:00:00 vmstat 1 3
+0 S root      3368  3349  0  80   0 - 14737 pause  08:00 ?        00:00:00 iostat -x 3 3
+0 S root      3369  3349  0  80   0 - 15981 unix_s 08:00 ?        00:00:00 awk BEGIN{skip=0; pr=0}?/^avg-cpu: /{if (skip==1) { pr=1} else {skip=1}}?pr == 1 {print}
+4 R root      3370  3356  0  80   0 - 17978 -      08:00 ?        00:00:00 ps -elf
+4 S root      3375  3353  0  80   0 -  4761 poll_s 08:00 ?        00:00:00 top -b -c -n 2
+zzz ***Wed Oct 19 08:01:43 UTC 2016
+F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
+4 S root         1     0  0  80   0 -  2590 poll_s 07:48 ?        00:00:00 init [3]                                                                                                                                                           
+1 S root         2     0  0  80   0 -     0 kthrea 07:48 ?        00:00:00 [kthreadd]
+1 S root         3     2  0 -40   - -     0 migrat 07:48 ?        00:00:00 [migration/0]
+1 S root         4     2  0  80   0 -     0 ksofti 07:48 ?        00:00:00 [ksoftirqd/0]
+5 S root         5     2  0 -40   - -     0 watchd 07:48 ?        00:00:00 [watchdog/0]
+1 S root         6     2  0 -40   - -     0 migrat 07:48 ?        00:00:00 [migration/1]
+1 S root         7     2  0  80   0 -     0 ksofti 07:48 ?        00:00:00 [ksoftirqd/1]
+5 S root         8     2  0 -40   - -     0 watchd 07:48 ?        00:00:00 [watchdog/1]
+1 S root         9     2  0 -40   - -     0 migrat 07:48 ?        00:00:00 [migration/2]
+1 S root        10     2  0  80   0 -     0 ksofti 07:48 ?        00:00:00 [ksoftirqd/2]
+5 S root        11     2  0 -40   - -     0 watchd 07:48 ?        00:00:00 [watchdog/2]
+1 S root        12     2  0 -40   - -     0 migrat 07:48 ?        00:00:00 [migration/3]
+1 S root        13     2  0  80   0 -     0 ksofti 07:48 ?        00:00:00 [ksoftirqd/3]
+5 S root        14     2  0 -40   - -     0 watchd 07:48 ?        00:00:00 [watchdog/3]
+1 S root        15     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [events/0]
+1 S root        16     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [events/1]
+1 S root        17     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [events/2]
+1 S root        18     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [events/3]
+1 S root        19     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [cpuset]
+1 S root        20     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [khelper]
+1 S root        21     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [netns]
+1 S root        22     2  0  80   0 -     0 async_ 07:48 ?        00:00:00 [async/mgr]
+1 S root        23     2  0  80   0 -     0 xenwat 07:48 ?        00:00:00 [xenwatch]
+1 S root        24     2  0  80   0 -     0 xb_wai 07:48 ?        00:00:00 [xenbus]
+1 S root        25     2  0  80   0 -     0 bdi_sy 07:48 ?        00:00:00 [sync_supers]
+1 S root        26     2  0  80   0 -     0 bdi_fo 07:48 ?        00:00:00 [bdi-default]
+1 S root        27     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kintegrityd/0]
+1 S root        28     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kintegrityd/1]
+1 S root        29     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kintegrityd/2]
+1 S root        30     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kintegrityd/3]
+1 S root        31     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kblockd/0]
+1 S root        32     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kblockd/1]
+1 S root        33     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kblockd/2]
+1 S root        34     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kblockd/3]
+1 S root        35     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [ata/0]
+1 S root        36     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [ata/1]
+1 S root        37     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [ata/2]
+1 S root        38     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [ata/3]
+1 S root        39     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [ata_aux]
+1 S root        40     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [ksuspend_usbd]
+1 S root        41     2  0  80   0 -     0 hub_th 07:48 ?        00:00:00 [khubd]
+1 S root        42     2  0  80   0 -     0 serio_ 07:48 ?        00:00:00 [kseriod]
+1 S root        47     2  0  80   0 -     0 watchd 07:48 ?        00:00:00 [khungtaskd]
+1 S root        48     2  0  80   0 -     0 kswapd 07:48 ?        00:00:00 [kswapd0]
+1 S root        49     2  0  85   5 -     0 ksm_sc 07:48 ?        00:00:00 [ksmd]
+1 S root        50     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [aio/0]
+1 S root        51     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [aio/1]
+1 S root        52     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [aio/2]
+1 S root        53     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [aio/3]
+1 S root        54     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [crypto/0]
+1 S root        55     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [crypto/1]
+1 S root        56     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [crypto/2]
+1 S root        57     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [crypto/3]
+1 S root        63     2  0  80   0 -     0 khvcd  07:48 ?        00:00:00 [khvcd]
+1 S root        64     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kpsmoused]
+1 S root        65     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kstriped]
+1 S root        66     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [ksnapd]
+1 S root        67     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [usbhid_resumer]
+1 S root       130     2  0  80   0 -     0 bdi_wr 07:49 ?        00:00:00 [flush-202:0]
+1 S root       131     2  0  80   0 -     0 kjourn 07:49 ?        00:00:00 [kjournald]
+5 S root       176     1  0  76  -4 -  4748 poll_s 07:49 ?        00:00:00 /sbin/udevd -d
+1 S root      1098     2  0  80   0 -     0 bdi_wr 07:50 ?        00:00:00 [flush-202:48]
+1 S root      1113     2  0  80   0 -     0 kjourn 07:53 ?        00:00:00 [kjournald]
+1 S root      1114     2  0  80   0 -     0 kjourn 07:53 ?        00:00:00 [kjournald]
+1 S root      1115     2  0  80   0 -     0 kjourn 07:53 ?        00:00:00 [kjournald]
+1 S root      1116     2  0  80   0 -     0 kjourn 07:53 ?        00:00:00 [kjournald]
+1 S root      1117     2  0  80   0 -     0 kjourn 07:53 ?        00:00:00 [kjournald]
+1 D root      1118     2  0  80   0 -     0 sync_b 07:53 ?        00:00:00 [kjournald]
+1 S root      1119     2  0  80   0 -     0 kjourn 07:53 ?        00:00:00 [kjournald]
+5 S root      1586     1  0  76  -4 -  6322 epoll_ 07:54 ?        00:00:00 auditd
+4 S root      1588  1586  0  72  -8 -  3556 futex_ 07:54 ?        00:00:00 /sbin/audispd
+1 S root      1589     2  0  80   0 -     0 kaudit 07:54 ?        00:00:00 [kauditd]
+5 S root      1609     1  0  80   0 -  2530 poll_s 07:54 ?        00:00:00 syslogd -m 0
+5 S root      1612     1  0  80   0 -   954 syslog 07:54 ?        00:00:00 klogd -x
+1 S root      1639     1  0  80   0 -  2693 hrtime 07:54 ?        00:00:00 irqbalance
+5 S rpc       1649     1  0  80   0 -  2530 poll_s 07:54 ?        00:00:00 portmap
+1 S root      1677     2  0  80   0 -     0 worker 07:54 ?        00:00:00 [rpciod/0]
+1 S root      1678     2  0  80   0 -     0 worker 07:54 ?        00:00:00 [rpciod/1]
+5 S root      1679     2  0  80   0 -     0 worker 07:54 ?        00:00:00 [rpciod/2]
+1 S root      1680     2  0  80   0 -     0 worker 07:54 ?        00:00:00 [rpciod/3]
+5 S rpcuser   1685     1  0  80   0 -  2542 poll_s 07:54 ?        00:00:00 rpc.statd
+1 S root      1707     1  0  80   0 -  6736 epoll_ 07:54 ?        00:00:00 rpc.idmapd
+5 S dbus      1732     1  0  80   0 -  6891 poll_s 07:54 ?        00:00:00 dbus-daemon --system
+5 S root      1742     1  0  80   0 - 15688 poll_s 07:54 ?        00:00:00 /usr/sbin/sshd
+1 S root      1766     2  0  75  -5 -     0 slow_w 07:54 ?        00:00:00 [kslowd000]
+1 S root      1767     2  0  75  -5 -     0 slow_w 07:54 ?        00:00:00 [kslowd001]
+1 S root      1769     2  0  80   0 -     0 worker 07:54 ?        00:00:00 [nfsiod]
+1 S root      1772     2  0  80   0 -     0 svc_re 07:54 ?        00:00:00 [lockd]
+5 S 68        1805     1  0  80   0 -  8778 poll_s 07:54 ?        00:00:00 hald
+0 S root      1806  1805  0  80   0 -  5427 poll_s 07:54 ?        00:00:00 hald-runner
+5 S root      1843     1  0  80   0 - 33131 poll_s 07:55 ?        00:00:01 /usr/bin/ruby /usr/sbin/mcollectived --pid=/var/run/mcollectived.pid --config=/etc/mcollective/server.cfg
+5 S nscd      1883     1  0  80   0 - 32408 epoll_ 07:55 ?        00:00:00 /usr/sbin/nscd
+1 S root      1965     1  0  80   0 - 39803 epoll_ 07:55 ?        00:00:00 /usr/sbin/sssd -f -D
+1 S root      1976     1  0  80   0 -  6451 poll_s 07:55 ?        00:00:00 xinetd -stayalive -pidfile /var/run/xinetd.pid
+4 S root      1991  1965  0  80   0 - 45039 epoll_ 07:55 ?        00:00:00 /usr/libexec/sssd/sssd_be -d 0 --debug-to-files --domain oracle.com
+5 S ntp       1994     1  0  80   0 -  6374 poll_s 07:55 ?        00:00:00 ntpd -x -u ntp:ntp -p /var/run/ntpd.pid
+0 S root      2011  1965  0  80   0 - 39416 epoll_ 07:55 ?        00:00:00 /usr/libexec/sssd/sssd_nss -d 0 --debug-to-files
+0 S root      2012  1965  0  80   0 - 39237 epoll_ 07:55 ?        00:00:00 /usr/libexec/sssd/sssd_pam -d 0 --debug-to-files
+5 S root      2019     1  0  80   0 - 18349 poll_s 07:55 ?        00:00:00 sendmail: accepting connections
+1 S smmsp     2028     1  0  80   0 - 14995 pause  07:55 ?        00:00:00 sendmail: Queue runner@01:00:00 for /var/spool/clientmqueue
+5 S root      2036     1  0  80   0 - 19760 hrtime 07:55 ?        00:00:00 crond
+5 S xfs       2058     1  0  80   0 -  6678 poll_s 07:55 ?        00:00:00 xfs -droppriv -daemon
+1 S root      2083     1  0  80   0 - 23424 poll_s 07:56 ?        00:00:00 /etc/observiced -b
+0 S root      2109     1  0  80   0 - 16235 pause  07:56 ?        00:00:00 /usr/bin/ksh ./OSWatcher.sh 60 168 gzip
+4 S root      2310  1742  0  80   0 - 24638 unix_s 07:56 ?        00:00:00 sshd: ramanrav [priv]
+0 S root      2315  2109  0  80   0 - 16227 pause  07:56 ?        00:00:00 /usr/bin/ksh ./OSWatcherFM.sh 168
+5 S ramanrav  2434  2310  0  80   0 - 32964 poll_s 07:57 ?        00:00:00 sshd: ramanrav@pts/0
+0 S ramanrav  2449  2434  0  80   0 - 18097 wait   07:57 pts/0    00:00:00 -bash
+4 S root      2496  1742  0  80   0 - 24638 unix_s 07:57 ?        00:00:00 sshd: subamish [priv]
+5 S subamish  2535  2496  0  80   0 - 32964 poll_s 07:57 ?        00:00:00 sshd: subamish@pts/2
+0 S subamish  2545  2535  0  80   0 - 18097 wait   07:57 pts/2    00:00:00 -bash
+4 S root      2568  2545  0  80   0 - 33348 poll_s 07:57 pts/2    00:00:00 sudo -u root -H sslogger
+4 S root      2627  2568  0  80   0 - 20270 n_tty_ 07:57 pts/2    00:00:00 sslogger
+1 S root      2628  2627  0  80   0 - 20270 n_tty_ 07:57 pts/2    00:00:00 sslogger
+4 S root      2629  2628  0  80   0 - 17575 n_tty_ 07:57 pts/3    00:00:00 -
+4 S root      2713  1742  0  80   0 - 24638 unix_s 07:58 ?        00:00:00 sshd: nrajavar [priv]
+0 S oracle    2741     1  0  80   0 - 22662 hrtime 07:58 ?        00:00:00 /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/perl/bin/perl /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/bin/emwd.pl agent /u01/app/oracle/product/emagent/agent12c/agent_inst/sysman/log/emagent.nohup
+0 S oracle    2839  2741  8  80   0 - 172283 futex_ 07:59 ?       00:00:11 /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/jdk/bin/java -Xmx128m -server -Djava.security.egd=file:///dev/./urandom -Dsun.lang.ClassLoader.allowArraySyntax=true -XX:+UseLinuxPosixThreadCPUClocks -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:+UseCompressedOops -Dwatchdog.pid=2741 -cp /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/jdbc/lib/ojdbc5.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/ucp/lib/ucp.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/modules/oracle.http_client_11.1.1.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/lib/xmlparserv2.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/lib/jsch.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/lib/optic.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/modules/oracle.dms_11.1.1/dms.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/modules/oracle.odl_11.1.1/ojdl.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/modules/oracle.odl_11.1.1/ojdl2.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/sysman/jlib/log4j-core.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/jlib/gcagent_core.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/sysman/jlib/emagentSDK-intg.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/sysman/jlib/emagentSDK.jar oracle.sysman.gcagent.tmmain.TMMain
+5 S nrajavar  2935  2713  0  80   0 - 32964 poll_s 07:59 ?        00:00:00 sshd: nrajavar@pts/4
+0 S nrajavar  2940  2935  0  80   0 - 18097 n_tty_ 07:59 pts/4    00:00:00 -bash
+5 S root      3416     1  0  80   0 - 34944 poll_s 08:00 ?        00:00:00 /usr/bin/ruby /usr/bin/puppet agent
+4 S root      3537  2449  0  80   0 - 33364 poll_s 08:01 pts/0    00:00:00 sudo -u root -H sslogger
+4 S root      3550     1  0  80   0 -   951 n_tty_ 08:01 tty1     00:00:00 /sbin/mingetty tty1
+4 S root      3551     1  0  80   0 -   951 n_tty_ 08:01 tty2     00:00:00 /sbin/mingetty tty2
+4 S root      3552     1  0  80   0 -   951 n_tty_ 08:01 tty3     00:00:00 /sbin/mingetty tty3
+4 S root      3553     1  0  80   0 -   951 n_tty_ 08:01 tty4     00:00:00 /sbin/mingetty tty4
+4 S root      3554     1  0  80   0 -   951 n_tty_ 08:01 tty5     00:00:00 /sbin/mingetty tty5
+4 S root      3555     1  0  80   0 -   951 n_tty_ 08:01 tty6     00:00:00 /sbin/mingetty tty6
+0 S root      3556     1  0  80   0 -   953 n_tty_ 08:01 hvc0     00:00:00 /sbin/agetty hvc0 9600 vt100-nav
+4 S root      3558     1  0  80   0 -  3752 pipe_w 08:01 ?        00:00:00 /bin/sh /etc/init.d/init.ohasd run
+0 S root      3560     1  0  80   0 -  3752 wait   08:01 ?        00:00:00 /bin/sh /etc/init.d/init.tfa run
+1 S root      3597  3558  0  80   0 -  3752 wait   08:01 ?        00:00:00 /bin/sh /etc/init.d/init.ohasd run
+1 S root      3598  3597  0  80   0 -  3752 wait   08:01 ?        00:00:00 /bin/sh /etc/init.d/init.ohasd run
+0 S root      3599  3597  0  80   0 -  1511 pipe_w 08:01 ?        00:00:00 /bin/grep 4638
+0 D root      3600  3598  0  80   0 - 26222 sync_p 08:01 ?        00:00:00 /u01/app/11.2.0.4/grid/bin/crsctl.bin check has
+4 S root      3622  3537  0  80   0 - 20270 n_tty_ 08:01 pts/0    00:00:00 sslogger
+1 S root      3623  3622  0  80   0 - 20270 n_tty_ 08:01 pts/0    00:00:00 sslogger
+4 S root      3624  3623  0  80   0 - 17575 n_tty_ 08:01 pts/1    00:00:00 -
+0 S oracle    3660  2839  0  80   0 - 38042 wait   08:01 ?        00:00:00 /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/perl/bin/perl /u01/app/oracle/product/emagent/agent12c/plugins/oracle.sysman.db.agent.plugin_12.1.0.7.0/scripts/lsnr_status.pl versiononly
+0 S oracle    3682  2839  0  80   0 - 36335 pipe_w 08:01 ?        00:00:00 /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/perl/bin/perl /u01/app/oracle/product/emagent/agent12c/plugins/oracle.sysman.db.agent.plugin_12.1.0.7.0/scripts//has/has_metrics.pl dynamic_property version /u01/app/11.2.0.4/grid
+0 D oracle    3742  3682  0  80   0 - 21962 sync_p 08:01 ?        00:00:00 /u01/app/11.2.0.4/grid/bin/emcrsp.bin em config -e node
+0 S oracle    3750     1  0  80   0 - 15968 wait   08:01 ?        00:00:00 sh -c /u01/app/11.2.0.4/grid/bin/lsnrctl > /tmp/La6ZXdqT9b
+0 S oracle    3751  3660  0  80   0 - 15968 wait   08:01 ?        00:00:00 sh -c /u01/app/11.2.0.4/grid/bin/lsnrctl > /tmp/iMQbAHJeGK
+0 D oracle    3752  3751  0  80   0 - 15682 sync_p 08:01 ?        00:00:00 /u01/app/11.2.0.4/grid/bin/lsnrctl
+0 D oracle    3753  3750  0  80   0 - 15682 sync_p 08:01 ?        00:00:00 /u01/app/11.2.0.4/grid/bin/lsnrctl
+0 S oracle    3771  2839  1  80   0 - 38075 pipe_w 08:01 ?        00:00:00 /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/perl/bin/perl /u01/app/oracle/product/emagent/agent12c/plugins/oracle.sysman.db.agent.plugin_12.1.0.7.0/scripts/lsnrresp.pl
+0 S oracle    3795  2839  1  80   0 - 36335 pipe_w 08:01 ?        00:00:00 /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/perl/bin/perl /u01/app/oracle/product/emagent/agent12c/plugins/oracle.sysman.db.agent.plugin_12.1.0.7.0/scripts//has/has_metrics.pl dynamic_property issiha /u01/app/11.2.0.4/grid
+0 D oracle    3797  3771  0  80   0 - 15573 sync_p 08:01 ?        00:00:00 /u01/app/11.2.0.4/grid/bin/tnsping (ADDRESS=(PROTOCOL=TCP)(HOST=acmsdbv2024-vip)(PORT=1521))
+0 D oracle    3798  3795  0  80   0 - 21962 sync_p 08:01 ?        00:00:00 /u01/app/11.2.0.4/grid/bin/emcrsp.bin em config -e node
+0 S root      3894  3560  0  80   0 -  3752 wait   08:01 ?        00:00:00 /bin/sh /u01/app/11.2.0.4/grid/tfa/acmsdbv2024/tfa_home/bin/tfactl -check
+0 D root      3907  3894  0  80   0 -  4585 sync_b 08:01 ?        00:00:00 /u01/app/11.2.0.4/grid/perl/bin/perl /u01/app/11.2.0.4/grid/tfa/acmsdbv2024/tfa_home/bin/tfactl.pl -check
+0 S root      3918  2109  0  80   0 - 16235 wait   08:01 ?        00:00:00 /usr/bin/ksh ./oswsub.sh /var/log/ops/os-watcher/archive/oswvmstat/acmsdbv2024_vmstat_16.10.19.0800.dat vmstat 1 3
+0 S root      3919  2109  0  80   0 - 16235 wait   08:01 ?        00:00:00 /usr/bin/ksh ./oswsub.sh /var/log/ops/os-watcher/archive/oswmpstat/acmsdbv2024_mpstat_16.10.19.0800.dat mpstat 1 3
+0 S root      3921  2109  0  80   0 - 16235 wait   08:01 ?        00:00:00 /usr/bin/ksh ./oswlnxio.sh /var/log/ops/os-watcher/archive/oswiostat/acmsdbv2024_iostat_16.10.19.0800.dat
+0 S root      3922  2109  0  80   0 - 16235 wait   08:01 ?        00:00:00 /usr/bin/ksh ./oswlnxtop.sh /var/log/ops/os-watcher/archive/oswtop/acmsdbv2024_top_16.10.19.0800.dat
+0 S root      3923  2109  0  80   0 - 16235 wait   08:01 ?        00:00:00 /usr/bin/ksh ./oswsub.sh /var/log/ops/os-watcher/archive/oswps/acmsdbv2024_ps_16.10.19.0800.dat ps -elf
+0 S root      3931  3919  0  80   0 - 14737 pause  08:01 ?        00:00:00 mpstat 1 3
+0 S root      3933  3918  0  80   0 -  1465 hrtime 08:01 ?        00:00:00 vmstat 1 3
+4 S root      3937  3922  0  80   0 -  4761 poll_s 08:01 ?        00:00:00 top -b -c -n 2
+4 R root      3939  3923  0  80   0 - 17978 -      08:01 ?        00:00:00 ps -elf
+zzz ***Wed Oct 19 08:02:43 UTC 2016
+F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
+4 S root         1     0  0  80   0 -  2590 poll_s 07:48 ?        00:00:00 init [3]                                                                                                                                                           
+1 S root         2     0  0  80   0 -     0 kthrea 07:48 ?        00:00:00 [kthreadd]
+1 S root         3     2  0 -40   - -     0 migrat 07:48 ?        00:00:00 [migration/0]
+1 S root         4     2  0  80   0 -     0 ksofti 07:48 ?        00:00:00 [ksoftirqd/0]
+5 S root         5     2  0 -40   - -     0 watchd 07:48 ?        00:00:00 [watchdog/0]
+1 S root         6     2  0 -40   - -     0 migrat 07:48 ?        00:00:00 [migration/1]
+1 S root         7     2  0  80   0 -     0 ksofti 07:48 ?        00:00:00 [ksoftirqd/1]
+5 S root         8     2  0 -40   - -     0 watchd 07:48 ?        00:00:00 [watchdog/1]
+1 S root         9     2  0 -40   - -     0 migrat 07:48 ?        00:00:00 [migration/2]
+1 S root        10     2  0  80   0 -     0 ksofti 07:48 ?        00:00:00 [ksoftirqd/2]
+5 S root        11     2  0 -40   - -     0 watchd 07:48 ?        00:00:00 [watchdog/2]
+1 S root        12     2  0 -40   - -     0 migrat 07:48 ?        00:00:00 [migration/3]
+1 S root        13     2  0  80   0 -     0 ksofti 07:48 ?        00:00:00 [ksoftirqd/3]
+5 S root        14     2  0 -40   - -     0 watchd 07:48 ?        00:00:00 [watchdog/3]
+1 S root        15     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [events/0]
+1 S root        16     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [events/1]
+1 S root        17     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [events/2]
+1 S root        18     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [events/3]
+1 S root        19     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [cpuset]
+1 S root        20     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [khelper]
+1 S root        21     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [netns]
+1 S root        22     2  0  80   0 -     0 async_ 07:48 ?        00:00:00 [async/mgr]
+1 S root        23     2  0  80   0 -     0 xenwat 07:48 ?        00:00:00 [xenwatch]
+1 S root        24     2  0  80   0 -     0 xb_wai 07:48 ?        00:00:00 [xenbus]
+1 S root        25     2  0  80   0 -     0 bdi_sy 07:48 ?        00:00:00 [sync_supers]
+1 S root        26     2  0  80   0 -     0 bdi_fo 07:48 ?        00:00:00 [bdi-default]
+1 S root        27     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kintegrityd/0]
+1 S root        28     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kintegrityd/1]
+1 S root        29     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kintegrityd/2]
+1 S root        30     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kintegrityd/3]
+1 S root        31     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kblockd/0]
+1 S root        32     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kblockd/1]
+1 S root        33     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kblockd/2]
+1 S root        34     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kblockd/3]
+1 S root        35     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [ata/0]
+1 S root        36     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [ata/1]
+1 S root        37     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [ata/2]
+1 S root        38     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [ata/3]
+1 S root        39     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [ata_aux]
+1 S root        40     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [ksuspend_usbd]
+1 S root        41     2  0  80   0 -     0 hub_th 07:48 ?        00:00:00 [khubd]
+1 S root        42     2  0  80   0 -     0 serio_ 07:48 ?        00:00:00 [kseriod]
+1 S root        47     2  0  80   0 -     0 watchd 07:48 ?        00:00:00 [khungtaskd]
+1 S root        48     2  0  80   0 -     0 kswapd 07:48 ?        00:00:00 [kswapd0]
+1 S root        49     2  0  85   5 -     0 ksm_sc 07:48 ?        00:00:00 [ksmd]
+1 S root        50     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [aio/0]
+1 S root        51     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [aio/1]
+1 S root        52     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [aio/2]
+1 S root        53     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [aio/3]
+1 S root        54     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [crypto/0]
+1 S root        55     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [crypto/1]
+1 S root        56     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [crypto/2]
+1 S root        57     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [crypto/3]
+1 S root        63     2  0  80   0 -     0 khvcd  07:48 ?        00:00:00 [khvcd]
+1 S root        64     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kpsmoused]
+1 S root        65     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [kstriped]
+1 S root        66     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [ksnapd]
+1 S root        67     2  0  80   0 -     0 worker 07:48 ?        00:00:00 [usbhid_resumer]
+1 S root       130     2  0  80   0 -     0 bdi_wr 07:49 ?        00:00:00 [flush-202:0]
+1 S root       131     2  0  80   0 -     0 kjourn 07:49 ?        00:00:00 [kjournald]
+5 S root       176     1  0  76  -4 -  4748 poll_s 07:49 ?        00:00:00 /sbin/udevd -d
+1 S root      1098     2  0  80   0 -     0 bdi_wr 07:50 ?        00:00:00 [flush-202:48]
+1 S root      1113     2  0  80   0 -     0 kjourn 07:53 ?        00:00:00 [kjournald]
+1 S root      1114     2  0  80   0 -     0 kjourn 07:53 ?        00:00:00 [kjournald]
+1 S root      1115     2  0  80   0 -     0 kjourn 07:53 ?        00:00:00 [kjournald]
+1 S root      1116     2  0  80   0 -     0 kjourn 07:53 ?        00:00:00 [kjournald]
+1 S root      1117     2  0  80   0 -     0 kjourn 07:53 ?        00:00:00 [kjournald]
+1 D root      1118     2  0  80   0 -     0 sync_b 07:53 ?        00:00:00 [kjournald]
+1 S root      1119     2  0  80   0 -     0 kjourn 07:53 ?        00:00:00 [kjournald]
+5 S root      1586     1  0  76  -4 -  6322 epoll_ 07:54 ?        00:00:00 auditd
+4 S root      1588  1586  0  72  -8 -  3556 futex_ 07:54 ?        00:00:00 /sbin/audispd
+1 S root      1589     2  0  80   0 -     0 kaudit 07:54 ?        00:00:00 [kauditd]
+5 S root      1609     1  0  80   0 -  2530 poll_s 07:54 ?        00:00:00 syslogd -m 0
+5 S root      1612     1  0  80   0 -   954 syslog 07:54 ?        00:00:00 klogd -x
+1 S root      1639     1  0  80   0 -  2693 hrtime 07:54 ?        00:00:00 irqbalance
+5 S rpc       1649     1  0  80   0 -  2530 poll_s 07:54 ?        00:00:00 portmap
+5 S root      1677     2  0  80   0 -     0 worker 07:54 ?        00:00:00 [rpciod/0]
+1 S root      1678     2  0  80   0 -     0 worker 07:54 ?        00:00:00 [rpciod/1]
+5 S root      1679     2  0  80   0 -     0 worker 07:54 ?        00:00:00 [rpciod/2]
+1 S root      1680     2  0  80   0 -     0 worker 07:54 ?        00:00:00 [rpciod/3]
+5 S rpcuser   1685     1  0  80   0 -  2542 poll_s 07:54 ?        00:00:00 rpc.statd
+1 S root      1707     1  0  80   0 -  6736 epoll_ 07:54 ?        00:00:00 rpc.idmapd
+5 S dbus      1732     1  0  80   0 -  6891 poll_s 07:54 ?        00:00:00 dbus-daemon --system
+5 S root      1742     1  0  80   0 - 15688 poll_s 07:54 ?        00:00:00 /usr/sbin/sshd
+1 S root      1766     2  0  75  -5 -     0 slow_w 07:54 ?        00:00:00 [kslowd000]
+1 S root      1767     2  0  75  -5 -     0 slow_w 07:54 ?        00:00:00 [kslowd001]
+1 S root      1769     2  0  80   0 -     0 worker 07:54 ?        00:00:00 [nfsiod]
+1 S root      1772     2  0  80   0 -     0 svc_re 07:54 ?        00:00:00 [lockd]
+5 S 68        1805     1  0  80   0 -  8778 poll_s 07:54 ?        00:00:00 hald
+0 S root      1806  1805  0  80   0 -  5427 poll_s 07:54 ?        00:00:00 hald-runner
+5 S root      1843     1  0  80   0 - 33131 poll_s 07:55 ?        00:00:01 /usr/bin/ruby /usr/sbin/mcollectived --pid=/var/run/mcollectived.pid --config=/etc/mcollective/server.cfg
+5 S nscd      1883     1  0  80   0 - 32408 epoll_ 07:55 ?        00:00:00 /usr/sbin/nscd
+1 S root      1965     1  0  80   0 - 39803 epoll_ 07:55 ?        00:00:00 /usr/sbin/sssd -f -D
+1 S root      1976     1  0  80   0 -  6451 poll_s 07:55 ?        00:00:00 xinetd -stayalive -pidfile /var/run/xinetd.pid
+4 S root      1991  1965  0  80   0 - 45039 epoll_ 07:55 ?        00:00:00 /usr/libexec/sssd/sssd_be -d 0 --debug-to-files --domain oracle.com
+5 S ntp       1994     1  0  80   0 -  6374 poll_s 07:55 ?        00:00:00 ntpd -x -u ntp:ntp -p /var/run/ntpd.pid
+0 S root      2011  1965  0  80   0 - 39416 -      07:55 ?        00:00:00 /usr/libexec/sssd/sssd_nss -d 0 --debug-to-files
+0 S root      2012  1965  0  80   0 - 39237 epoll_ 07:55 ?        00:00:00 /usr/libexec/sssd/sssd_pam -d 0 --debug-to-files
+5 S root      2019     1  0  80   0 - 18349 poll_s 07:55 ?        00:00:00 sendmail: accepting connections
+1 S smmsp     2028     1  0  80   0 - 14995 pause  07:55 ?        00:00:00 sendmail: Queue runner@01:00:00 for /var/spool/clientmqueue
+5 S root      2036     1  0  80   0 - 19760 hrtime 07:55 ?        00:00:00 crond
+5 S xfs       2058     1  0  80   0 -  6678 poll_s 07:55 ?        00:00:00 xfs -droppriv -daemon
+1 S root      2083     1  0  80   0 - 23424 poll_s 07:56 ?        00:00:00 /etc/observiced -b
+0 S root      2109     1  0  80   0 - 16235 pause  07:56 ?        00:00:00 /usr/bin/ksh ./OSWatcher.sh 60 168 gzip
+4 S root      2310  1742  0  80   0 - 24638 unix_s 07:56 ?        00:00:00 sshd: ramanrav [priv]
+0 S root      2315  2109  0  80   0 - 16227 pause  07:56 ?        00:00:00 /usr/bin/ksh ./OSWatcherFM.sh 168
+5 S ramanrav  2434  2310  0  80   0 - 32964 poll_s 07:57 ?        00:00:00 sshd: ramanrav@pts/0
+0 S ramanrav  2449  2434  0  80   0 - 18097 wait   07:57 pts/0    00:00:00 -bash
+4 S root      2496  1742  0  80   0 - 24638 unix_s 07:57 ?        00:00:00 sshd: subamish [priv]
+5 S subamish  2535  2496  0  80   0 - 32964 poll_s 07:57 ?        00:00:00 sshd: subamish@pts/2
+0 S subamish  2545  2535  0  80   0 - 18097 wait   07:57 pts/2    00:00:00 -bash
+4 S root      2568  2545  0  80   0 - 33348 poll_s 07:57 pts/2    00:00:00 sudo -u root -H sslogger
+4 S root      2627  2568  0  80   0 - 20270 n_tty_ 07:57 pts/2    00:00:00 sslogger
+1 S root      2628  2627  0  80   0 - 20270 n_tty_ 07:57 pts/2    00:00:00 sslogger
+4 S root      2629  2628  0  80   0 - 17575 n_tty_ 07:57 pts/3    00:00:00 -
+4 S root      2713  1742  0  80   0 - 24638 unix_s 07:58 ?        00:00:00 sshd: nrajavar [priv]
+0 S oracle    2741     1  0  80   0 - 22662 wait   07:58 ?        00:00:00 /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/perl/bin/perl /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/bin/emwd.pl agent /u01/app/oracle/product/emagent/agent12c/agent_inst/sysman/log/emagent.nohup
+0 S oracle    2839  2741  7  80   0 - 175626 futex_ 07:59 ?       00:00:15 /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/jdk/bin/java -Xmx128m -server -Djava.security.egd=file:///dev/./urandom -Dsun.lang.ClassLoader.allowArraySyntax=true -XX:+UseLinuxPosixThreadCPUClocks -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:+UseCompressedOops -Dwatchdog.pid=2741 -cp /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/jdbc/lib/ojdbc5.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/ucp/lib/ucp.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/modules/oracle.http_client_11.1.1.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/lib/xmlparserv2.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/lib/jsch.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/lib/optic.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/modules/oracle.dms_11.1.1/dms.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/modules/oracle.odl_11.1.1/ojdl.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/modules/oracle.odl_11.1.1/ojdl2.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/sysman/jlib/log4j-core.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/jlib/gcagent_core.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/sysman/jlib/emagentSDK-intg.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/sysman/jlib/emagentSDK.jar oracle.sysman.gcagent.tmmain.TMMain
+5 S nrajavar  2935  2713  0  80   0 - 32964 poll_s 07:59 ?        00:00:00 sshd: nrajavar@pts/4
+0 S nrajavar  2940  2935  0  80   0 - 18097 n_tty_ 07:59 pts/4    00:00:00 -bash
+5 S root      3416     1  0  80   0 - 34944 poll_s 08:00 ?        00:00:00 /usr/bin/ruby /usr/bin/puppet agent
+4 S root      3537  2449  0  80   0 - 33364 poll_s 08:01 pts/0    00:00:00 sudo -u root -H sslogger
+4 S root      3550     1  0  80   0 -   951 n_tty_ 08:01 tty1     00:00:00 /sbin/mingetty tty1
+4 S root      3551     1  0  80   0 -   951 n_tty_ 08:01 tty2     00:00:00 /sbin/mingetty tty2
+4 S root      3552     1  0  80   0 -   951 n_tty_ 08:01 tty3     00:00:00 /sbin/mingetty tty3
+4 S root      3553     1  0  80   0 -   951 n_tty_ 08:01 tty4     00:00:00 /sbin/mingetty tty4
+4 S root      3554     1  0  80   0 -   951 n_tty_ 08:01 tty5     00:00:00 /sbin/mingetty tty5
+4 S root      3555     1  0  80   0 -   951 n_tty_ 08:01 tty6     00:00:00 /sbin/mingetty tty6
+0 S root      3556     1  0  80   0 -   953 n_tty_ 08:01 hvc0     00:00:00 /sbin/agetty hvc0 9600 vt100-nav
+4 S root      3558     1  0  80   0 -  3752 wait   08:01 ?        00:00:00 /bin/sh /etc/init.d/init.ohasd run
+0 S root      3560     1  0  80   0 -  3752 wait   08:01 ?        00:00:00 /bin/sh /etc/init.d/init.tfa run
+4 S root      3622  3537  0  80   0 - 20270 n_tty_ 08:01 pts/0    00:00:00 sslogger
+1 S root      3623  3622  0  80   0 - 20270 n_tty_ 08:01 pts/0    00:00:00 sslogger
+4 S root      3624  3623  0  80   0 - 17575 wait   08:01 pts/1    00:00:00 -
+0 S root      3894  3560  0  80   0 -  3752 wait   08:01 ?        00:00:00 /bin/sh /u01/app/11.2.0.4/grid/tfa/acmsdbv2024/tfa_home/bin/tfactl -check
+4 S root      3907  3894  0  80   0 - 11500 pipe_w 08:01 ?        00:00:00 /u01/app/11.2.0.4/grid/perl/bin/perl /u01/app/11.2.0.4/grid/tfa/acmsdbv2024/tfa_home/bin/tfactl.pl -check
+4 S root      3950  3624  0  80   0 - 27333 wait   08:01 pts/1    00:00:00 su - oracle
+4 S oracle    3951  3950  0  80   0 - 17574 n_tty_ 08:01 pts/1    00:00:00 -bash
+4 S root      4181  1742  0  80   0 - 24638 unix_s 08:02 ?        00:00:00 sshd: subamish [priv]
+0 D root      4188  3907  0  80   0 - 192818 sync_p 08:02 ?       00:00:00 /u01/app/11.2.0.4/grid/jdk/jre/bin/java -Xms128m -Xmx512m -Djavax.net.ssl.trustStore=/u01/app/11.2.0.4/grid/tfa/acmsdbv2024/tfa_home/public.jks -classpath /u01/app/11.2.0.4/grid/tfa/acmsdbv2024/tfa_home/jlib/RATFA.jar:/u01/app/11.2.0.4/grid/tfa/acmsdbv2024/tfa_home/jlib/je-5.0.84.jar:/u01/app/11.2.0.4/grid/tfa/acmsdbv2024/tfa_home/jlib/ojdbc5.jar:/u01/app/11.2.0.4/grid/tfa/acmsdbv2024/tfa_home/jlib/commons-io-2.2.jar oracle.rat.tfa.CommandLine acmsdbv2024:listtfausers -port 5000
+5 S subamish  4344  4181  0  80   0 - 33007 poll_s 08:02 ?        00:00:00 sshd: subamish@notty
+1 S subamish  4349  4344  0  80   0 - 32969 poll_s 08:02 ?        00:00:00 sshd: subamish@internal-sftp
+0 S oracle    4540  2839  0  80   0 - 18989 pipe_w 08:02 ?        00:00:00 /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/perl/bin/perl /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/sysman/admin/scripts/getpatchinv.pl -homes /u01/app/oracle/product/emagent/agent12c/agent_inst/sysman/emd/temp/agentOHList3686110586134898587.tmp -out /u01/app/oracle/product/emagent/agent12c/agent_inst/sysman/log/patchList.info -jre /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/jdk
+0 S oracle    4542  4540  0  80   0 - 15968 wait   08:02 ?        00:00:00 /bin/sh /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/OPatch/opatch -help -oh /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0 -jre /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/jdk
+0 S root      4570  3558  0  80   0 -   950 hrtime 08:02 ?        00:00:00 /bin/sleep 10
+0 S oracle    4619  4542  2  80   0 - 136007 futex_ 08:02 ?       00:00:00 /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/jdk/bin/java -mx160m -cp /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/OPatch/ocm/lib/emocmclnt.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/oui/jlib/OraInstaller.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/oui/jlib/OraPrereq.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/oui/jlib/share.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/oui/jlib/orai18n-mapping.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/oui/jlib/xmlparserv2.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/oui/jlib/emCfg.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/oui/jlib/ojmisc.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/OPatch/jlib/opatch.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/OPatch/jlib/opatchsdk.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/OPatch/oplan/jlib/automation.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/OPatch/jlib/oracle.opatch.classpath.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/OPatch/oplan/jlib/jaxb/activation.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/OPatch/oplan/jlib/jaxb/jaxb-api.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/OPatch/oplan/jlib/jaxb/jaxb-impl.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/OPatch/oplan/jlib/jaxb/jsr173_1.0_api.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/OPatch/oplan/jlib/OsysModel.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/OPatch/oplan/jlib/onepatchsdk.jar -DOPatch.ORACLE_HOME=/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0 -DOPatch.DEBUG=false -DOPatch.RUNNING_DIR=/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/OPatch -DOPatch.MW_HOME= -DOPatch.WL_HOME= -DOPatch.COMMON_COMPONENTS_HOME= -DOPatch.OUI_LOCATION= -DOPatch.FMW_COMPONENT_HOME= -DOPatch.OPATCH_CLASSPATH= -DOPatch.WEBLOGIC_CLASSPATH=:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/jdbc/lib/ojdbc6.jar -DOPatch.CALLER=opatch -Dweblogic.security.TrustKeyStore=DemoTrust oracle/opatch/OPatch -help -oh /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0 -jre /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/jdk -invPtrLoc /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/oraInst.loc
+0 S oracle    4658  2741  0  80   0 - 15968 wait   08:02 ?        00:00:00 sh -c /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/bin/emdctl status agent  300 >/dev/null 2>&1
+0 S oracle    4659  4658  0  80   0 -  3716 wait   08:02 ?        00:00:00 /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/bin/emdctl status agent 300
+0 S oracle    4660  4659 92  80   0 - 181059 futex_ 08:02 ?       00:00:01 /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/jdk/bin/java -Xmx256m -server -Djava.security.egd=file:///dev/./urandom -Dsun.lang.ClassLoader.allowArraySyntax=true -XX:+UseLinuxPosixThreadCPUClocks -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:+UseCompressedOops -classpath /u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/jdbc/lib/ojdbc5.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/ucp/lib/ucp.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/modules/oracle.http_client_11.1.1.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/lib/xmlparserv2.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/lib/jsch.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/lib/optic.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/modules/oracle.dms_11.1.1/dms.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/modules/oracle.odl_11.1.1/ojdl.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/modules/oracle.odl_11.1.1/ojdl2.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/sysman/jlib/log4j-core.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/jlib/gcagent_emdctl.jar:/u01/app/oracle/product/emagent/agent12c/core/12.1.0.4.0/jlib/gcagent_unittests.jar oracle.sysman.gcagent.clients.emdctlj.EmdCtl status agent 300
+0 S root      4683  2109  0  80   0 - 16235 wait   08:02 ?        00:00:00 /usr/bin/ksh ./oswsub.sh /var/log/ops/os-watcher/archive/oswvmstat/acmsdbv2024_vmstat_16.10.19.0800.dat vmstat 1 3
+0 S root      4684  2109  0  80   0 - 16235 wait   08:02 ?        00:00:00 /usr/bin/ksh ./oswsub.sh /var/log/ops/os-watcher/archive/oswmpstat/acmsdbv2024_mpstat_16.10.19.0800.dat mpstat 1 3
+0 S root      4686  2109  0  80   0 - 16235 wait   08:02 ?        00:00:00 /usr/bin/ksh ./oswlnxio.sh /var/log/ops/os-watcher/archive/oswiostat/acmsdbv2024_iostat_16.10.19.0800.dat
+0 S root      4687  2109  0  80   0 - 16235 wait   08:02 ?        00:00:00 /usr/bin/ksh ./oswlnxtop.sh /var/log/ops/os-watcher/archive/oswtop/acmsdbv2024_top_16.10.19.0800.dat
+0 S root      4688  2109  0  80   0 - 16235 wait   08:02 ?        00:00:00 /usr/bin/ksh ./oswsub.sh /var/log/ops/os-watcher/archive/oswps/acmsdbv2024_ps_16.10.19.0800.dat ps -elf
+0 S root      4699  4683  0  80   0 -  1465 hrtime 08:02 ?        00:00:00 vmstat 1 3
+0 S root      4700  4684  0  80   0 - 14737 pause  08:02 ?        00:00:00 mpstat 1 3
+4 R root      4704  4688  0  80   0 - 17978 -      08:02 ?        00:00:00 ps -elf
+4 S root      4705  4687  0  80   0 -  4761 poll_s 08:02 ?        00:00:00 top -b -c -n 2
+0 S root      4706  4686  0  80   0 - 14737 pause  08:02 ?        00:00:00 iostat -x 3 3
+0 S root      4707  4686  0  80   0 - 15981 unix_s 08:02 ?        00:00:00 awk BEGIN{skip=0; pr=0}?/^avg-cpu: /{if (skip==1) { pr=1} else {skip=1}}?pr == 1 {print}
