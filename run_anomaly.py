@@ -31,11 +31,13 @@ import math
 import datetime
 import dateutil.parser
 import json
+import oswdata_ps
 
 from nupic.frameworks.opf.modelfactory import ModelFactory
 from nupic.frameworks.opf.predictionmetricsmanager import MetricsManager
 
 from nupic.algorithms.anomaly_likelihood import AnomalyLikelihood
+
 
 def runAnomaly(options):
   """
@@ -48,94 +50,137 @@ def runAnomaly(options):
 
   # Update the resolution value for the encoder
   sensorParams = modelParams['modelParams']['sensorParams']
-  numBuckets = modelParams['modelParams']['sensorParams']['encoders']['value'].pop('numBuckets')
+  numBuckets = modelParams['modelParams']['sensorParams']['encoders']['value'].pop(
+      'numBuckets')
   resolution = options.resolution
   if resolution is None:
     resolution = max(0.001,
                      (options.max - options.min) / numBuckets)
-  print "Using resolution value: {0}".format(resolution)
+  print("Using resolution value: {0}".format(resolution))
   sensorParams['encoders']['value']['resolution'] = resolution
 
   model = ModelFactory.create(modelParams)
   model.enableInference({'predictedField': 'value'})
-  with open (options.inputFile) as fin:
-    
-    # Open file and setup headers
-    # Here we write the log likelihood value as the 'anomaly score'
-    # The actual CLA outputs are labeled 'raw anomaly score'
-    reader = csv.reader(fin)
-    csvWriter = csv.writer(open(options.outputFile,"wb"))
+  if options.inputFile != "":
+      with open(options.inputFile) as fin:
+
+        # Open file and setup headers
+        # Here we write the log likelihood value as the 'anomaly score'
+        # The actual CLA outputs are labeled 'raw anomaly score'
+        reader = csv.reader(fin)
+        csvWriter = csv.writer(open(options.outputFile, "wb"))
+        csvWriter.writerow(["timestamp", "value",
+                            "_raw_score", "likelihood_score", "log_likelihood_score"])
+        headers = reader.next()
+
+        # The anomaly likelihood object
+        anomalyLikelihood = AnomalyLikelihood()
+
+        # Iterate through each record in the CSV file
+        print "Starting processing at", datetime.datetime.now()
+        for i, record in enumerate(reader, start=1):
+
+          # Convert input data to a dict so we can pass it into the model
+          inputData = dict(zip(headers, record))
+          inputData["value"] = float(inputData["value"])
+          inputData["dttm"] = dateutil.parser.parse(inputData["dttm"])
+          #inputData["dttm"] = datetime.datetime.now()
+
+          # Send it to the CLA and get back the raw anomaly score
+          result = model.run(inputData)
+          anomalyScore = result.inferences['anomalyScore']
+
+          # Compute the Anomaly Likelihood
+          likelihood = anomalyLikelihood.anomalyProbability(
+              inputData["value"], anomalyScore, inputData["dttm"])
+          logLikelihood = anomalyLikelihood.computeLogLikelihood(likelihood)
+          if likelihood > 0.9999:
+            print "Anomaly detected:", inputData['dttm'], inputData['value'], likelihood
+
+          # Write results to the output CSV file
+          csvWriter.writerow([inputData["dttm"], inputData["value"],
+                              anomalyScore, likelihood, logLikelihood])
+
+          # Progress report
+          if (i % 1000) == 0:
+            print i, "records processed"
+  elif options.oswpsDir != "":
+    csvWriter = csv.writer(open(options.outputFile, "wb"))
     csvWriter.writerow(["timestamp", "value",
                         "_raw_score", "likelihood_score", "log_likelihood_score"])
-    headers = reader.next()
+    headers = ['dttm', 'value']
     
+    # Get PS dictionary
+    osw = OSWData(options.oswpsDir, PS)
+    osw.traverse_dir()
+    ps_dict = osw.get_ps_dict()
     # The anomaly likelihood object
     anomalyLikelihood = AnomalyLikelihood()
-    
+
     # Iterate through each record in the CSV file
-    print "Starting processing at",datetime.datetime.now()
-    for i, record in enumerate(reader, start=1):
-      
-      # Convert input data to a dict so we can pass it into the model
-      inputData = dict(zip(headers, record))
-      inputData["value"] = float(inputData["value"])
-      inputData["dttm"] = dateutil.parser.parse(inputData["dttm"])
+    print "Starting processing at", datetime.datetime.now()
+    for i, timestamp in enumerate(ps_dict):
+      ps_count = ps_dict[timestamp]
+        
+      inputData["value"] = float(ps_count)
+      inputData["dttm"] = dateutil.parser.parse(timestamp)
       #inputData["dttm"] = datetime.datetime.now()
-      
+
       # Send it to the CLA and get back the raw anomaly score
       result = model.run(inputData)
       anomalyScore = result.inferences['anomalyScore']
-      
+
       # Compute the Anomaly Likelihood
       likelihood = anomalyLikelihood.anomalyProbability(
-        inputData["value"], anomalyScore, inputData["dttm"])
+          inputData["value"], anomalyScore, inputData["dttm"])
       logLikelihood = anomalyLikelihood.computeLogLikelihood(likelihood)
       if likelihood > 0.9999:
-        print "Anomaly detected:",inputData['dttm'],inputData['value'],likelihood
+        print "Anomaly detected:", inputData['dttm'], inputData['value'], likelihood
 
       # Write results to the output CSV file
       csvWriter.writerow([inputData["dttm"], inputData["value"],
                           anomalyScore, likelihood, logLikelihood])
 
       # Progress report
-      if (i%1000) == 0: print i,"records processed"
+      if (i % 1000) == 0:
+        print i, "records processed"
 
-  print "Completed processing",i,"records at",datetime.datetime.now()
-  print "Anomaly scores for",options.inputFile,
-  print "have been written to",options.outputFile
+  print "Completed processing", i, "records at", datetime.datetime.now()
+  print "Anomaly scores for", options.inputFile,
+  print "have been written to", options.outputFile
 
 
 if __name__ == "__main__":
   helpString = (
-    "\n%prog [options] [uid]"
-    "\n%prog --help"
-    "\n"
-    "\nRuns NuPIC anomaly detection on a csv file."
-    "\nWe assume the data files have a timestamp field called 'dttm' and"
-    "\na value field called 'value'. All other fields are ignored."
-    "\nNote: it is important to set min and max properly according to data."
+      "\n%prog [options] [uid]"
+      "\n%prog --help"
+      "\n"
+      "\nRuns NuPIC anomaly detection on a csv file."
+      "\nWe assume the data files have a timestamp field called 'dttm' and"
+      "\na value field called 'value'. All other fields are ignored."
+      "\nNote: it is important to set min and max properly according to data."
   )
 
   # All the command line options
   parser = OptionParser(helpString)
   parser.add_option("--inputFile",
-                    help="Path to data file. (default: %default)", 
-                    dest="inputFile", default="data/cpu_cc0c5.csv")
+                    help="Path to data file. (default: %default)",
+                    dest="inputFile", default="")
+  parser.add_option("--oswpsDir",
+                    help="Path to oswpsDir. (default: %default)",
+                    dest="oswpsDir", default="oswps")
   parser.add_option("--outputFile",
                     help="Output file. Results will be written to this file."
-                    " (default: %default)", 
-                    dest="outputFile", default="anomaly_scores.csv")
+                    " (default: %default)",
+                    dest="outputFile", default="default_output.csv")
   parser.add_option("--max", default=100.0, type=float,
-      help="Maximum number for the value field. [default: %default]")
+                    help="Maximum number for the value field. [default: %default]")
   parser.add_option("--min", default=0.0, type=float,
-      help="Minimum number for the value field. [default: %default]")
+                    help="Minimum number for the value field. [default: %default]")
   parser.add_option("--resolution", default=None, type=float,
-      help="Resolution for the value field (overrides min and max). [default: %default]")
-  
+                    help="Resolution for the value field (overrides min and max). [default: %default]")
+
   options, args = parser.parse_args(sys.argv[1:])
 
   # Run it
   runAnomaly(options)
-
-
-
