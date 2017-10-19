@@ -31,7 +31,6 @@ import math
 import datetime
 import dateutil.parser
 import json
-import logging
 
 from nupic.frameworks.opf.modelfactory import ModelFactory
 from nupic.frameworks.opf.predictionmetricsmanager import MetricsManager
@@ -45,33 +44,27 @@ def runAnomaly(options):
   """
   # Load the model params JSON
   with open("model_params.json") as fp:
-  #with open("/Users/mmyu/PDIT/Projects/GIT/nupic.subutal/run_anomaly/model_params.json") as fp:
     modelParams = json.load(fp)
 
   # Update the resolution value for the encoder
   sensorParams = modelParams['modelParams']['sensorParams']
-  numBuckets = modelParams['modelParams']['sensorParams']['encoders']['value'].pop('numBuckets')  # 130
+  numBuckets = modelParams['modelParams']['sensorParams']['encoders']['value'].pop('numBuckets')
   resolution = options.resolution
   if resolution is None:
     resolution = max(0.001,
-                     (options.max - options.min) / numBuckets)  # 110/130 for machine_temperature
+                     (options.max - options.min) / numBuckets)
   print "Using resolution value: {0}".format(resolution)
   sensorParams['encoders']['value']['resolution'] = resolution
 
-  #model = ModelFactory.create(modelParams)
-  model = ModelFactory.create(modelParams, logging.DEBUG)
+  model = ModelFactory.create(modelParams)
   model.enableInference({'predictedField': 'value'})
-  
-#   logger = model._getLogger("com.numenta.nupic.tools.configuration_base")
-#   logger.setLevel(logging.DEBUG)
-#   print "level:{0}".format(logger.level)
   with open (options.inputFile) as fin:
     
     # Open file and setup headers
     # Here we write the log likelihood value as the 'anomaly score'
     # The actual CLA outputs are labeled 'raw anomaly score'
     reader = csv.reader(fin)
-    csvWriter = csv.writer(open(options.outputFile, "wb"))
+    csvWriter = csv.writer(open(options.outputFile,"wb"))
     csvWriter.writerow(["timestamp", "value",
                         "_raw_score", "likelihood_score", "log_likelihood_score"])
     headers = reader.next()
@@ -80,14 +73,15 @@ def runAnomaly(options):
     anomalyLikelihood = AnomalyLikelihood()
     
     # Iterate through each record in the CSV file
-    print "Starting processing at", datetime.datetime.now()
+    print "Starting processing at",datetime.datetime.now()
     for i, record in enumerate(reader, start=1):
+      
       # Convert input data to a dict so we can pass it into the model
       inputData = dict(zip(headers, record))
       inputData["value"] = float(inputData["value"])
       inputData["dttm"] = dateutil.parser.parse(inputData["dttm"])
-      # inputData["dttm"] = datetime.datetime.now()
-
+      #inputData["dttm"] = datetime.datetime.now()
+      
       # Send it to the CLA and get back the raw anomaly score
       result = model.run(inputData)
       anomalyScore = result.inferences['anomalyScore']
@@ -96,24 +90,19 @@ def runAnomaly(options):
       likelihood = anomalyLikelihood.anomalyProbability(
         inputData["value"], anomalyScore, inputData["dttm"])
       logLikelihood = anomalyLikelihood.computeLogLikelihood(likelihood)
-      print "anomalyScore:", anomalyScore
-      print "likelihood:", likelihood
-      print "logLikelihood:", logLikelihood
-
       if likelihood > 0.9999:
-        print "Anomaly detected:", inputData['dttm'], inputData['value'], likelihood
+        print "Anomaly detected:",inputData['dttm'],inputData['value'],likelihood
 
       # Write results to the output CSV file
       csvWriter.writerow([inputData["dttm"], inputData["value"],
                           anomalyScore, likelihood, logLikelihood])
 
       # Progress report
-      if (i % 1000) == 0: print i, "records processed"
-      # if (i%10) == 0: return
+      if (i%1000) == 0: print i,"records processed"
 
-  print "Completed processing", i, "records at", datetime.datetime.now()
-  print "Anomaly scores for", options.inputFile,
-  print "have been written to", options.outputFile
+  print "Completed processing",i,"records at",datetime.datetime.now()
+  print "Anomaly scores for",options.inputFile,
+  print "have been written to",options.outputFile
 
 
 if __name__ == "__main__":
@@ -130,11 +119,11 @@ if __name__ == "__main__":
   # All the command line options
   parser = OptionParser(helpString)
   parser.add_option("--inputFile",
-                    help="Path to data file. (default: %default)",
+                    help="Path to data file. (default: %default)", 
                     dest="inputFile", default="data/cpu_cc0c5.csv")
   parser.add_option("--outputFile",
                     help="Output file. Results will be written to this file."
-                    " (default: %default)",
+                    " (default: %default)", 
                     dest="outputFile", default="anomaly_scores.csv")
   parser.add_option("--max", default=100.0, type=float,
       help="Maximum number for the value field. [default: %default]")
