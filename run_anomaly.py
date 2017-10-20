@@ -41,120 +41,123 @@ from nupic.algorithms.anomaly_likelihood import AnomalyLikelihood
 
 
 def runAnomaly(options):
-  """
-  Create and run a CLA Model on the given dataset (based on the hotgym anomaly
-  client in NuPIC).
-  """
-  # Load the model params JSON
-  with open("model_params.json") as fp:
-    modelParams = json.load(fp)
-
-  if options.oswpsDir != "":
-    # Get PS dictionary
-    osw = OSWData(options.oswpsDir, PS)
-    osw.traverse_dir()
-    ps_dict_unsorted = osw.get_ps_dict()
-    options.max = ps_max_value = max(ps_dict_unsorted.values())
-    options.min = ps_min_value = min(ps_dict_unsorted.values())
-    print("Min value:" + str(ps_min_value) + ', ' + "Max value:" + str(ps_max_value))
-
-  # Update the resolution value for the encoder
-  sensorParams = modelParams['modelParams']['sensorParams']
-  numBuckets = modelParams['modelParams']['sensorParams']['encoders']['value'].pop(
-      'numBuckets')
-  resolution = options.resolution
-  if resolution is None:
-    resolution = max(0.001,
-                     (options.max - options.min) / numBuckets)
-  print("Using resolution value: {0}".format(resolution))
-  sensorParams['encoders']['value']['resolution'] = resolution
-
-  model = ModelFactory.create(modelParams)
-  model.enableInference({'predictedField': 'value'})
-  if options.inputFile != "":
-      with open(options.inputFile) as fin:
-
-        # Open file and setup headers
-        # Here we write the log likelihood value as the 'anomaly score'
-        # The actual CLA outputs are labeled 'raw anomaly score'
-        reader = csv.reader(fin)
-        csvWriter = csv.writer(open(options.outputFile, "wb"))
-        csvWriter.writerow(["timestamp", "value",
-                            "_raw_score", "likelihood_score", "log_likelihood_score"])
-        headers = reader.next()
-
-        # The anomaly likelihood object
-        anomalyLikelihood = AnomalyLikelihood()
-
-        # Iterate through each record in the CSV file
-        print "Starting processing at", datetime.datetime.now()
-        for i, record in enumerate(reader, start=1):
-
-          # Convert input data to a dict so we can pass it into the model
-          inputData = dict(zip(headers, record))
-          inputData["value"] = float(inputData["value"])
-          inputData["dttm"] = dateutil.parser.parse(inputData["dttm"])
-          #inputData["dttm"] = datetime.datetime.now()
-
-          # Send it to the CLA and get back the raw anomaly score
-          result = model.run(inputData)
-          anomalyScore = result.inferences['anomalyScore']
-
-          # Compute the Anomaly Likelihood
-          likelihood = anomalyLikelihood.anomalyProbability(
-              inputData["value"], anomalyScore, inputData["dttm"])
-          logLikelihood = anomalyLikelihood.computeLogLikelihood(likelihood)
-          if likelihood > 0.9999:
-            print "Anomaly detected:", inputData['dttm'], inputData['value'], likelihood
-
-          # Write results to the output CSV file
-          csvWriter.writerow([inputData["dttm"], inputData["value"],
-                              anomalyScore, likelihood, logLikelihood])
-
-          # Progress report
-          if (i % 1000) == 0:
-            print i, "records processed"
-  elif options.oswpsDir != "":
-    csvWriter = csv.writer(open(options.outputFile, "wb"))
-    csvWriter.writerow(["timestamp", "value",
-                        "_raw_score", "likelihood_score", "log_likelihood_score"])
-    ps_od = collections.OrderedDict(sorted(ps_dict_unsorted.items()))
-
-    # The anomaly likelihood object
-    anomalyLikelihood = AnomalyLikelihood()
-
-    # Iterate through each record in the CSV file
-    print "Starting processing at", datetime.datetime.now()
-    for i, timestamp in enumerate(ps_od):
-      ps_count = ps_od[timestamp]
+    """
+    Create and run a CLA Model on the given dataset (based on the hotgym anomaly
+    client in NuPIC).
+    """
+    # Load the model params JSON
+    with open("model_params.json") as fp:
+        modelParams = json.load(fp)
+    
+    if options.oswpsDir != "":
+        # Get PS dictionary
+        osw = OSWData(options.oswpsDir, PS)
+        osw.traverse_dir()
+        ps_dict_unsorted = osw.get_ps_dict()
+        options.max = ps_max_value = max(ps_dict_unsorted.values())
+        options.min = ps_min_value = min(ps_dict_unsorted.values())
+        print("Min value:" + str(ps_min_value) + ', ' + "Max value:" + str(ps_max_value))
+    
+    # Update the resolution value for the encoder
+    sensorParams = modelParams['modelParams']['sensorParams']
+    numBuckets = modelParams['modelParams']['sensorParams']['encoders']['value'].pop('numBuckets')
+    resolution = options.resolution
+    if resolution is None:
+        resolution = max(0.001,
+                       (options.max - options.min) / numBuckets)
+    print("Using resolution value: {0}".format(resolution))
+    sensorParams['encoders']['value']['resolution'] = resolution
+    
+    model = ModelFactory.create(modelParams)
+    model.enableInference({'predictedField': 'value'})
+    if options.inputFile != "":
+        with open(options.inputFile) as fin:
+            # Open file and setup headers
+            # Here we write the log likelihood value as the 'anomaly score'
+            # The actual CLA outputs are labeled 'raw anomaly score'
+            reader = csv.reader(fin)
+            csvWriter = csv.writer(open(options.outputFile, "wb"))
+            csvWriter.writerow(["timestamp", "value",
+                                "_raw_score", "likelihood_score", "log_likelihood_score"])
+            headers = reader.next()
+    
+            # The anomaly likelihood object
+            anomalyLikelihood = AnomalyLikelihood()
+    
+            # Iterate through each record in the CSV file
+            print "Starting processing at", datetime.datetime.now()
+            for i, record in enumerate(reader, start=1):
+    
+              # Convert input data to a dict so we can pass it into the model
+              inputData = dict(zip(headers, record))
+              inputData["value"] = float(inputData["value"])
+              inputData["dttm"] = dateutil.parser.parse(inputData["dttm"])
+              #inputData["dttm"] = datetime.datetime.now()
+    
+              # Send it to the CLA and get back the raw anomaly score
+              result = model.run(inputData)
+              anomalyScore = result.inferences['anomalyScore']
+    
+              # Compute the Anomaly Likelihood
+              likelihood = anomalyLikelihood.anomalyProbability(
+                  inputData["value"], anomalyScore, inputData["dttm"])
+              logLikelihood = anomalyLikelihood.computeLogLikelihood(likelihood)
+              if likelihood > 0.9999:
+                print "Anomaly detected:", inputData['dttm'], inputData['value'], likelihood
+    
+              # Write results to the output CSV file
+              csvWriter.writerow([inputData["dttm"], inputData["value"],
+                                  anomalyScore, likelihood, logLikelihood])
+    
+              # Progress report
+              if (i % 1000) == 0:
+                print i, "records processed"
+    elif options.oswpsDir != "":
+        if options.use_rtm == True:
+            rtm = LinearRegressionTemoporalMemory(10, 10, 0, 600, 2, 0, "right_tail", 0)
+            rtm.analyze(ps_dict_unsorted)
+        else:
+            csvWriter = csv.writer(open(options.outputFile, "wb"))
+            csvWriter.writerow(["timestamp", "value",
+                                "_raw_score", "likelihood_score", "log_likelihood_score"])
+            ps_od = collections.OrderedDict(sorted(ps_dict_unsorted.items()))
         
-      inputData = {}
-      inputData["value"] = float(ps_count)
-      inputData["dttm"] = dateutil.parser.parse(timestamp)
-      #inputData["dttm"] = datetime.datetime.now()
+            # The anomaly likelihood object
+            anomalyLikelihood = AnomalyLikelihood()
+        
+            # Iterate through each record in the CSV file
+            print "Starting processing at", datetime.datetime.now()
+            for i, timestamp in enumerate(ps_od):
+                ps_count = ps_od[timestamp]
+                  
+                inputData = {}
+                inputData["value"] = float(ps_count)
+                inputData["dttm"] = dateutil.parser.parse(timestamp)
+                #inputData["dttm"] = datetime.datetime.now()
+                
+                # Send it to the CLA and get back the raw anomaly score
+                result = model.run(inputData)
+                anomalyScore = result.inferences['anomalyScore']
+                
+                # Compute the Anomaly Likelihood
+                likelihood = anomalyLikelihood.anomalyProbability(
+                    inputData["value"], anomalyScore, inputData["dttm"])
+                logLikelihood = anomalyLikelihood.computeLogLikelihood(likelihood)
+                if likelihood > 0.9999:
+                  print "Anomaly detected:", inputData['dttm'], inputData['value'], likelihood
+                
+                # Write results to the output CSV file
+                csvWriter.writerow([inputData["dttm"], inputData["value"],
+                                    anomalyScore, likelihood, logLikelihood])
+                
+                # Progress report
+                if (i % 1000) == 0:
+                  print i, "records processed"
 
-      # Send it to the CLA and get back the raw anomaly score
-      result = model.run(inputData)
-      anomalyScore = result.inferences['anomalyScore']
 
-      # Compute the Anomaly Likelihood
-      likelihood = anomalyLikelihood.anomalyProbability(
-          inputData["value"], anomalyScore, inputData["dttm"])
-      logLikelihood = anomalyLikelihood.computeLogLikelihood(likelihood)
-      if likelihood > 0.9999:
-        print "Anomaly detected:", inputData['dttm'], inputData['value'], likelihood
-
-      # Write results to the output CSV file
-      csvWriter.writerow([inputData["dttm"], inputData["value"],
-                          anomalyScore, likelihood, logLikelihood])
-
-      # Progress report
-      if (i % 1000) == 0:
-        print i, "records processed"
-
-  print "Completed processing", i, "records at", datetime.datetime.now()
-  print "Anomaly scores for", options.inputFile,
-  print "have been written to", options.outputFile
+    print "Completed processing", i, "records at", datetime.datetime.now()
+    print "Anomaly scores for", options.inputFile,
+    print "have been written to", options.outputFile
 
 
 if __name__ == "__main__":
@@ -186,6 +189,9 @@ if __name__ == "__main__":
                     help="Minimum number for the value field. [default: %default]")
   parser.add_option("--resolution", default=None, type=float,
                     help="Resolution for the value field (overrides min and max). [default: %default]")
+  parser.add_option("-r", "--use_rtm",
+                  action="store_false", dest="use_rtm", default=False,
+                  help="Enabled RTM algorithm")
 
   options, args = parser.parse_args(sys.argv[1:])
 
