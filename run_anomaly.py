@@ -125,8 +125,12 @@ def runAnomaly(options):
                 print i, "records processed"
     elif options.oswpsDir != "":
         if options.use_rtm == True:
-            rtm = LinearRegressionTemoporalMemory(10, 10, 0, 600, 2, 0, "right_tail", 0)
-            rtm.analyze(g_ps_count_dict_unsorted)
+            rtm_sensitivity = 2
+            rtm = LinearRegressionTemoporalMemory(window=10, interval=10, min_=options.max.min,
+                                                  max_=options.max, boost=rtm_sensitivity,
+                                                  leak_detection=0, critical_region="right_tail",
+                                                  debug=0)
+            g_abnomal_data_dict_unsorted = rtm.analyze(g_ps_count_dict_unsorted)
         else:
             csvWriter = csv.writer(open(options.outputFile, "wb"))
             csvWriter.writerow(["timestamp", "value",

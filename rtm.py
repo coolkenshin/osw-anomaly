@@ -176,6 +176,8 @@ class LinearRegressionTemoporalMemory:
             return None
 
     def push_refactor(self, timestm, value):
+        anomalyLikelihood = 0
+
         #increment iterations
         if value != 0:
             self.allzero=False
@@ -265,7 +267,6 @@ class LinearRegressionTemoporalMemory:
             for millis in self.history.keys():
                 if millis < (current_millis - 60*60*1000):
                     del self.history[millis]
-            print(anomalyLikelihood)
             print("ps_count:" + str(value) + ' ' + "anomalyLikelihood:" + str(anomalyLikelihood))
             self.run_logger.debug("RTM DEBUG::: After retrain anomalyLikelihood=%s",anomalyLikelihood);
             self.actualCurrentValue = actualCurrentValue
@@ -282,6 +283,11 @@ class LinearRegressionTemoporalMemory:
                 if millis < (current_millis - 60*60*1000):
                     del self.history[millis]
 
+        if anomalyLikelihood == 1:
+            return True
+        else:
+            return False
+
     def _init_logging(self):
         cur_timestamp = datetime.datetime.fromtimestamp(int(time.time())).strftime('%Y%m%d_%H%M%S')
         file_name = "rtm_on_ps_count_" + cur_timestamp + ".log" 
@@ -295,13 +301,18 @@ class LinearRegressionTemoporalMemory:
     def analyze(self, ps_dict_unsorted):
         ps_od = collections.OrderedDict(sorted(ps_dict_unsorted.items()))
         keys, values = zip(*ps_od.items())
-        
-        iteration=1
+        abnomal_data_dict_unsorted = {}
+
         for i, timestamp in enumerate(ps_od):
             ps_count = ps_od[timestamp]
+            """
             current_millis=int(round(time.time() * 1000,0))
             self.push_refactor(current_millis , ps_count)
-            iteration+=1
+            """
+            is_anomaly = self.push_refactor(timestamp , ps_count)
+            if is_anomaly:
+                abnomal_data_dict_unsorted[timestamp] = ps_count
+        return abnomal_data_dict_unsorted
 
 def main():
     rtm = LinearRegressionTemoporalMemory(10, 10, 0, 600, 2, 0, "right_tail", 0)
