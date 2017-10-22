@@ -195,7 +195,8 @@ def plot_diagram(normal_unsorted_dict, abnomal_unsorted_dict, filename):
     )
 
     data = [trace_normal, trace_abnomal]
-    py.iplot(data, filename=filename)
+    #py.iplot(data, filename=filename)
+    py.plot(data, filename=filename)
 
 if __name__ == "__main__":
     helpString = (
