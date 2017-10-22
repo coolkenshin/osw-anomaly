@@ -232,7 +232,7 @@ if __name__ == "__main__":
     parser.add_option("--resolution", default=None, type=float,
                       help="Resolution for the value field (overrides min and max). [default: %default]")
     parser.add_option("-r", "--use_rtm",
-                    action="store_false", dest="use_rtm", default=False,
+                    action="store_false", dest="use_rtm", default=True,
                     help="Enabled RTM algorithm")
     
     options, args = parser.parse_args(sys.argv[1:])
