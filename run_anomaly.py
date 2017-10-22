@@ -35,6 +35,7 @@ import collections
 import plotly.plotly as py
 import plotly.graph_objs as go
 from oswdata_ps import OSWData, PS
+from rtm import LinearRegressionTemoporalMemory
 
 from nupic.frameworks.opf.modelfactory import ModelFactory
 from nupic.frameworks.opf.predictionmetricsmanager import MetricsManager
