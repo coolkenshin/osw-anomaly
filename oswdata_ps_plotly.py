@@ -384,12 +384,23 @@ class OSWData(object):
         return self.ps_dict
 
 def plot_diagram(keys, values, filename):
+    normal_color = dict(color='#FF0000')
+    abnomal_color = dict(color='#0000FF')
     trace = go.Scatter(
         x = keys,
-        y = values
+        y = values,
+        mode = 'lines',
+        marker=normal_color
+    )
+    
+    trace2 = go.Scatter(
+        x = keys[:100],
+        y = values[:100],
+        mode = 'markers',
+        marker=abnomal_color
     )
 
-    data = [trace]
+    data = [trace, trace2]
     py.iplot(data, filename=filename)
 
 def main():
