@@ -127,7 +127,7 @@ def runAnomaly(options):
     elif options.oswpsDir != "":
         if options.use_rtm == True:
             rtm_sensitivity = 2
-            rtm = LinearRegressionTemoporalMemory(window=10, interval=10, min_=options.max.min,
+            rtm = LinearRegressionTemoporalMemory(window=10, interval=10, min_=options.min,
                                                   max_=options.max, boost=rtm_sensitivity,
                                                   leak_detection=0, critical_region="right_tail",
                                                   debug=0)
