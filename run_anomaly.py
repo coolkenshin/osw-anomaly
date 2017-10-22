@@ -155,8 +155,8 @@ def runAnomaly(options):
                     inputData["value"], anomalyScore, inputData["dttm"])
                 logLikelihood = anomalyLikelihood.computeLogLikelihood(likelihood)
                 if likelihood > 0.9999:
-                  print "Anomaly detected:", inputData['dttm'], inputData['value'], likelihood
-                  g_abnomal_data_dict_unsorted[timestamp] = ps_count
+                    print "Anomaly detected:", inputData['dttm'], inputData['value'], likelihood
+                    g_abnomal_data_dict_unsorted[timestamp] = ps_count
                 
                 # Write results to the output CSV file
                 csvWriter.writerow([inputData["dttm"], inputData["value"],
@@ -174,7 +174,7 @@ def runAnomaly(options):
 def plot_diagram(normal_unsorted_dict, abnomal_unsorted_dict, filename):
     normal_ps_od = collections.OrderedDict(sorted(normal_unsorted_dict.items()))
     normal_keys, normal_values = zip(*normal_ps_od.items())
-    abnomal_ps_od = collections.OrderedDict(sorted(normal_unsorted_dict.items()))
+    abnomal_ps_od = collections.OrderedDict(sorted(abnomal_unsorted_dict.items()))
     abnomal_keys, abnomal_values = zip(*abnomal_ps_od.items())
     
     normal_color = dict(color='#0000FF')
