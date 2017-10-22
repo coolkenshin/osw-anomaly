@@ -266,6 +266,7 @@ class LinearRegressionTemoporalMemory:
                 if millis < (current_millis - 60*60*1000):
                     del self.history[millis]
             print(anomalyLikelihood)
+            print("ps_count:" + str(value) + ' ' + "anomalyLikelihood:" + str(anomalyLikelihood))
             self.run_logger.debug("RTM DEBUG::: After retrain anomalyLikelihood=%s",anomalyLikelihood);
             self.actualCurrentValue = actualCurrentValue
             self.currentPrediction = currentPrediction
@@ -298,7 +299,6 @@ class LinearRegressionTemoporalMemory:
         iteration=1
         for i, timestamp in enumerate(ps_od):
             ps_count = ps_od[timestamp]
-            print(ps_count)
             current_millis=int(round(time.time() * 1000,0))
             self.push_refactor(current_millis , ps_count)
             iteration+=1
