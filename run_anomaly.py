@@ -176,7 +176,7 @@ def runAnomaly(options):
     print "Anomaly scores for", options.inputFile,
     print "have been written to", options.outputFile
 
-def plot_diagram(normal_unsorted_dict, abnomal_unsorted_dict, filename):
+def _plot_diagram(normal_unsorted_dict, abnomal_unsorted_dict, filename):
     normal_ps_od = collections.OrderedDict(sorted(normal_unsorted_dict.items()))
     normal_keys, normal_values = zip(*normal_ps_od.items())
     abnomal_ps_od = collections.OrderedDict(sorted(abnomal_unsorted_dict.items()))
@@ -203,6 +203,13 @@ def plot_diagram(normal_unsorted_dict, abnomal_unsorted_dict, filename):
     #py.iplot(data, filename=filename)
     py.plot(data, filename=filename)
 
+def plot_diagram(options):
+    if options.use_rtm == True:
+        filename = 'ps_count_crond_problems_with_rtm_algorithm'
+    else:
+        filename = 'ps_count_crond_problems_with_htm_algorithm'
+    _plot_diagram(g_ps_count_dict_unsorted, g_abnomal_data_dict_unsorted, filename)
+    
 if __name__ == "__main__":
     helpString = (
         "\n%prog [options] [uid]"
@@ -240,6 +247,6 @@ if __name__ == "__main__":
     
     # Run it
     runAnomaly(options)
-    plot_diagram(g_ps_count_dict_unsorted, g_abnomal_data_dict_unsorted, 'ps_count_crond_problems_with_htm_algorithm')
+    plot_diagram(options)
   
   
