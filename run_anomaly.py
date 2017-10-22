@@ -234,6 +234,6 @@ if __name__ == "__main__":
     
     # Run it
     runAnomaly(options)
-    plot_diagram(ps_dict_unsorted, g_abnomal_data_dict_unsorted, 'ps_count_crond_problems_with_htm_algorithm')
+    plot_diagram(g_ps_count_dict_unsorted, g_abnomal_data_dict_unsorted, 'ps_count_crond_problems_with_htm_algorithm')
   
   
